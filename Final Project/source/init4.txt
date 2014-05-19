@@ -1,0 +1,8 @@
+<addr>:<data value in hexidecimal>
+0:FFFF;
+1:ABAN;
+2:1234;
+4:1628;
+16:DEB1;
+64:3900;
+1024:0001;

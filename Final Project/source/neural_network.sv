@@ -1,0 +1,173 @@
+// $Id: $
+// File name:   neural_network.sv
+// Created:     4/15/2014
+// Author:      Shreyas Ganesh Sundararaman 
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Neural Network (ain't gone work)
+
+module neural_network(
+  //inputs
+  input wire clk, n_rst,
+  input wire [6:0] traffic_score_ns,
+  input wire [6:0] traffic_score_ew,
+  input wire [6:0] ped_score_ns, 
+  input wire [6:0] ped_score_ew,
+  input wire signed [4:0] traffic_ns_weight,traffic_ew_weight,ped_ns_weight,ped_ew_weight,time_weight,
+  //input wire enable,
+  
+  //outputs
+  output reg calib_enable,
+  output reg dir_out, 
+  output reg signed [7:0] time_change,
+  output reg write_enable,
+  output reg [6:0] TNS,TEW,PNS,PEW,
+  output reg signed [13:0] NS_OUT, EW_OUT,
+  output reg signed [4:0] old_tns_weight,old_tew_weight,old_pns_weight,old_pew_weight,old_time_weight
+);
+
+//for dir_out,
+//dir_out = 1 for NS
+//dir_out = 0 for EW
+
+reg signed [4:0] old_tns_w,old_pns_w,old_tew_w,old_pew_w;
+reg signed [4:0] new_tns_w,new_pns_w,new_tew_w,new_pew_w;
+reg signed [4:0] newest_tns_w,newest_pns_w,newest_tew_w,newest_pew_w;
+
+
+reg signed[13:0] NS_out, EW_out,time_in;
+reg signed [16:0] time_out;
+reg enable;
+int i,j;
+
+
+typedef enum bit[2:0] {CALIB,IDLE,CALC,FIN} state_type;
+
+
+state_type state,nextstate;
+
+always @(posedge clk,negedge n_rst)
+  begin:StateReg
+  if(n_rst == '0) begin
+     state <= IDLE;
+     old_tns_w <= 1;
+     old_pns_w <= 1;
+     old_tew_w <= 1;
+     old_pew_w <= 1;
+
+  end else begin
+      state <= nextstate;
+      old_tns_w <= new_tns_w;
+      old_pns_w <= new_pns_w;
+      old_tew_w <= new_tew_w;
+      old_pew_w <= new_pew_w;
+      new_tns_w <= newest_tns_w;
+      new_pns_w <= newest_pns_w;
+      new_tew_w <= newest_tew_w;
+      new_pew_w <= newest_pew_w;
+  end
+end
+
+always_comb begin
+  enable = 0;
+  calib_enable = 0;
+  TNS = traffic_score_ns;
+  TEW = traffic_score_ew;
+  PNS = ped_score_ns;
+  PEW = ped_score_ew;
+  NS_OUT = NS_out;
+  EW_OUT = EW_out;
+  newest_tns_w = traffic_ns_weight;
+  newest_pns_w = traffic_ew_weight;
+  newest_tew_w = ped_ns_weight;
+  newest_pew_w = ped_ew_weight;
+  time_change = 0;
+  
+  old_tns_weight = old_tns_w;
+	old_tew_weight= old_tew_w;
+	old_pns_weight= old_pns_w;
+	old_pew_weight = old_pew_w;
+    
+  case(state)
+    CALIB: begin
+      calib_enable = 1;
+      nextstate = IDLE;
+    end  
+    
+    IDLE : begin
+      if(NS_out > EW_out) begin
+        dir_out = 1'b1;
+        time_in = NS_out - EW_out;
+      end else begin
+        dir_out = 1'b0;
+        time_in = EW_out - NS_out;
+      end   
+      nextstate = CALC;
+    end
+  
+    
+    CALC: begin
+      enable = 1;
+      for (i=15;i>=0;i=i-1) begin
+        if(time_out[i] == 1'b1) begin
+          j = i;
+          break;
+        end
+      end
+      time_change[6:0] = j*8;  //HIGH VAL = 8*15 = 120 seconds
+                    //LOW VAL  = 8*0 = 0 seconds
+                    
+      time_change[7] = time_out[16]; 
+      $display("time out %d",time_out);
+      if(time_out > 0) begin
+        nextstate = FIN;
+      end else begin
+        nextstate = CALC;
+      end
+    end
+    
+    FIN: begin
+      TNS = traffic_score_ns;
+      TEW = traffic_score_ew;
+      PNS = ped_score_ns;
+      PEW = ped_score_ew;
+      NS_OUT = NS_out;
+      EW_OUT = EW_out;
+      
+      nextstate = IDLE;
+    end
+    endcase
+end
+
+neuron neuron_ns (
+.clk(clk),
+.n_rst(n_rst),
+.input1(traffic_score_ns),
+.input2(ped_score_ns),
+.weight1(traffic_ns_weight),
+.weight2(ped_ns_weight),
+.addout(NS_out)
+);
+
+neuron neuron_ew (
+.clk(clk),
+.n_rst(n_rst),
+.input1(traffic_score_ew),
+.input2(ped_score_ew),
+.weight1(traffic_ew_weight),
+.weight2(ped_ew_weight),
+.addout(EW_out)
+);
+
+
+sneuron2 timeout (
+.clk(clk),
+.n_rst(n_rst),
+.enable(enable),
+.zInput(time_in),
+.zWeight(time_weight),
+.zOut(time_out)
+);
+
+               
+endmodule

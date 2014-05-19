@@ -1,0 +1,47 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2014.01.31.18.34.39;	author mg137;	state Exp;
+branches;
+next	;
+
+
+desc
+@hey
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@// $Id: $
+// File name:   sensor_s.sv
+// Created:     1/31/2014
+// Author:      Emre Ozsahin
+// Lab Section: 5
+// Version:     1.0  Initial Design Entry
+// Description: Structural style sensor error.
+
+
+module sensor_s
+(
+  input wire [3:0] sensors,
+  output wire error
+  
+);
+  wire output1,output2,output3;
+  
+  and A1(output1,sensors[1],sensors[2]);
+  and A2(output2,sensors[1],sensors[3]);
+  or mid(output3,output1,output2);
+  or fin(error,output3,sensors[0]);
+  
+endmodule
+@

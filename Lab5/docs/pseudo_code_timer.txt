@@ -1,0 +1,22 @@
+
+
+
+always_ff clock ,n_rst
+if n_rst = 0
+	shift_strobe = 0
+	packet_done = 0
+	state = wait
+else
+	if enable_timer 
+		state = nextstate
+
+end
+	
+always_comb
+	if state == count
+		counter_15cyc
+		for i in 9
+			shift_strobe=1
+			counter_10cyc
+	else if state == wait		
+end

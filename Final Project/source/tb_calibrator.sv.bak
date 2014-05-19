@@ -1,0 +1,118 @@
+// $Id: $
+// File name:   tb_calibrator.sv
+// Created:     4/27/2014
+// Author:      Shreyas Ganesh Sundararaman
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: TestBench for calibrator
+`timescale 1ns/10ps
+
+module tb_calibrator(
+);
+   reg clk,n_rst;
+   reg enable;
+   reg SRAM_ready;
+   reg [4:0] curr_tr_ns_weight, curr_tr_ew_weight,curr_ped_ns_weight,curr_ped_ew_weight,curr_time_weight;
+   reg [6:0] sram_traffic_ns,sram_traffic_ew,sram_ped_ns,sram_ped_ew;
+   reg [13:0] sram_NS_out,sram_EW_out;
+   reg sram_dir_out;
+   reg [6:0] sram_time_change;
+   reg ready;
+   reg [9:0] Address;
+   reg SRAM_enable;
+   reg [4:0] new_tr_ns_weight,new_tr_ew_weight,new_ped_ns_weight,new_ped_ew_weight,new_time_weight;
+   
+   
+  calibrator dah_calibrator(clk,n_rst,enable,SRAM_ready,curr_tr_ns_weight,curr_tr_ew_weight,curr_ped_ns_weight,curr_ped_ew_weight,curr_time_weight,sram_traffic_ns,sram_traffic_ew,sram_ped_ns,sram_ped_ew,sram_NS_out,sram_EW_out,sram_dir_out,sram_time_change,ready,Address,SRAM_enable,new_tr_ns_weight,new_tr_ew_weight,new_ped_ns_weight,new_ped_ew_weight,new_time_weight);
+   
+   always begin 
+    #5
+    clk = ~clk;
+    end
+   
+ initial begin
+    clk = 1;
+    n_rst = 0;
+    #97
+    n_rst = 1;
+    enable = 0;
+    SRAM_ready = 0;
+    curr_tr_ns_weight = 0;
+    curr_tr_ew_weight = 0;
+    curr_ped_ns_weight = 0;
+    curr_ped_ew_weight =0;
+    curr_time_weight = 0;
+    sram_traffic_ns = 0;
+    sram_traffic_ew = 0;
+    sram_ped_ns = 0;
+    sram_ped_ew = 0;
+    sram_NS_out = 0;
+    sram_EW_out = 0;
+    sram_dir_out = 0;
+    sram_time_change = 0;
+    #40
+    n_rst = 1;
+    enable = 1;
+    SRAM_ready = 0;
+    curr_tr_ns_weight = 0;
+    curr_tr_ew_weight = 0;
+    curr_ped_ns_weight = 0;
+    curr_ped_ew_weight =0;
+    curr_time_weight = 0;
+    sram_traffic_ns = 0;
+    sram_traffic_ew = 0;
+    sram_ped_ns = 0;
+    sram_ped_ew = 0;
+    sram_NS_out = 0;
+    sram_EW_out = 0;
+    sram_dir_out = 0;
+    sram_time_change = 0;
+    #10
+    n_rst = 1;
+    enable = 1;
+    SRAM_ready = 1;
+    curr_tr_ns_weight = 5'b00101;
+    curr_tr_ew_weight = 5'b00001;
+    curr_ped_ns_weight = 5'b00011;
+    curr_ped_ew_weight =5'b00110;
+    curr_time_weight = 5'b00001;
+    sram_traffic_ns = 45;
+    sram_traffic_ew = 65;
+    sram_ped_ns = 70;
+    sram_ped_ew = 30;
+    sram_NS_out = 450;
+    sram_EW_out = 200;
+    sram_dir_out = 1;
+    sram_time_change = 65;
+    #10
+    /*n_rst = 1;
+    enable = 1;
+    SRAM_ready = 1;
+    curr_tr_ns_weight = 5'b00001;
+    curr_tr_ew_weight = 5'b00101;
+    curr_ped_ns_weight = 5'b00111;
+    curr_ped_ew_weight =5'b00101;
+    curr_time_weight = 5'b00001;
+    sram_traffic_ns = 45;
+    sram_traffic_ew = 65;
+    sram_ped_ns = 70;
+    sram_ped_ew = 30;
+    sram_NS_out = 450;
+    sram_EW_out = 200;
+    sram_dir_out = 1;
+    sram_time_change = 65;
+    #10
+    countVal = 19;
+    #10
+    countVal = 10;
+    #10
+    countVal = 4;
+    #10
+    countVal = 0;
+    
+    */
+    #500
+    $stop;
+  end
+
+endmodule

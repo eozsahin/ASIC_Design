@@ -1,0 +1,8 @@
+Needs to be done:
+Sync_emergency
+sync_weather
+count_traffic
+count_pedestrian
+clk_divider
+Database append/Scan
+Database/Sram

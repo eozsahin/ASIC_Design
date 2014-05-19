@@ -1,0 +1,29 @@
+11.1 Design Questions
+
+1-The minimum amount of time data_ready must remain asserted for 2 cycles to ensure store then from store to sort. Also, data_ready has to be valid for 1 clock cycle since it enters to sort state.
+
+2-
+idle: if(data_ready == 0) goto idle;
+store: if (data_ready == 0) got eidle;
+	reg[5] = data
+	err = 0
+sort1: reg[1] = reg[2]
+sort2: reg[2] = reg[3]
+sort3: reg[3] = reg[4]
+sort4: reg[4] = reg[5]
+add1: reg[6] = reg[1] * reg[2] 
+	if(V) goto eidle
+		goto idle
+add2: reg[7] = reg[4] * reg[3]
+	if(V) goto eidle
+		goto idle
+add3: reg[0] = reg[6] + reg[7]
+	if(V) goto eidle
+		goto idle
+eidle: err = 1
+	if(data_ready == 1) goto store
+	if(data_ready == 0) goto eidle
+
+3- Filtered image was blurred. It makes sence since because filtering involved the averager.
+4- It uses fopen, fscanf, fseek, ftell and fwrite like C syntax to grab file and manipulate it.
+5- Like said, fscanf, fseek, ftell and other file handler C syntax code is used.

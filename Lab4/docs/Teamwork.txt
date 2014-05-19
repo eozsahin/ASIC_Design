@@ -1,0 +1,16 @@
+Teamwork Report
+
+1)
+1-Myself: 4 Teammate:4
+2-Myself: 5 Teammate:5
+3-Myself: 4 Teammate:4
+4-Myself: 5 Teammate:5
+
+2) We efficiently used the office hours as well as worked hard enough to get our lab done on time. I mostly worked on debugging the code which took a lot of time since there always pops an error no matter what. My partner helped me out about the concepts on how to approach on controller and avg_four codes. He gave me ideas on how to do it efficiently and error free. However sometimes we switched our roles and controlled our code and how it functioned. 
+
+3)This week we met 4 times during and after the office hours. We used text messaging pretty frequently. 
+
+4) I contribute the team by debugging and evaluating the design as well as designing the how the code structured for the labs. I did QA by testing the design looking at the wave forms to identify. Coming up with design was also my contribution through out the lab and post lab.
+
+5)My teammate contributed the team by forming the logic of each step in the lab. I learned to devote a lot of time and not to give up easily during these labs. He taught me how to differentiate blocks in the design. 
+

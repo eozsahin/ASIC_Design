@@ -1,0 +1,39 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-431.3.1.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module timer
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(70): near "end": syntax error, unexpected end
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module timer
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(45): (vlog-2730) Undefined variable: 'index'.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(61): (vlog-2730) Undefined variable: 'WAIT2'.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(67): (vlog-2730) Undefined variable: 'WAIT2'.
+# ** Warning: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(79): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module timer
+# ** Warning: /home/ecegrid/a/mg137/ece337/Lab5/source/timer.sv(79): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	timer
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab5/source/sr_9bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module sr_9bit
+# 
+# Top level modules:
+# 	sr_9bit

@@ -1,0 +1,450 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-431.3.1.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vlog moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module moore
+# ** Error: moore.sv(63): near "endcase": syntax error, unexpected endcase
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module moore
+# 
+# Top level modules:
+# 	moore
+vlog tb_moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_moore
+# ** Error: tb_moore.sv(294): near "=": syntax error, unexpected '=', expecting ++ or --
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module moore
+# 
+# Top level modules:
+# 	moore
+vlog tb_moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_moore
+# 
+# Top level modules:
+# 	tb_moore
+vlog moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module moore
+# 
+# Top level modules:
+# 	moore
+vlog moore.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module moore
+# 
+# Top level modules:
+# 	moore
+vlog mealy.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module mealy
+# ** Error: mealy.sv(60): near "b": syntax error, unexpected IDENTIFIER, expecting ';'
+# ** Error: mealy.sv(63): near "b": syntax error, unexpected IDENTIFIER, expecting ';'
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(24): (vlog-2730) Undefined variable: 'n_reset'.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): near "<=": syntax error, unexpected <=
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(24): (vlog-2730) Undefined variable: 'n_reset'.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): LHS in procedural continuous assignment may not be a net: dr.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): LHS in procedural continuous assignment may not be a net: dr.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): LHS in procedural continuous assignment may not be a net: dr.
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(32): near "endmodule": syntax error, unexpected endmodule
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(26): (vlog-2110) Illegal reference to net "dr".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(27): (vlog-2110) Illegal reference to net "overflow".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always_comb": syntax error, unexpected always_comb
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(44): near "end": syntax error, unexpected end
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(44): near "end": syntax error, unexpected end
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(44): near "end": syntax error, unexpected end
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(44): near "end": syntax error, unexpected end
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always_comb": syntax error, unexpected always_comb
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(34): near "always": syntax error, unexpected always
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: (vlog-7) Failed to open design unit file "/home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/10bit_counter.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter_10bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/counter_10bit.sv(9): near "10": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter_10bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module counter_10bit
+# 
+# Top level modules:
+# 	counter_10bit
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(22): near "sycnhronizer": syntax error, unexpected IDENTIFIER, expecting ';' or ','
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(22): near "synchronizer": syntax error, unexpected IDENTIFIER, expecting ';' or ','
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(22): near "sync": syntax error, unexpected IDENTIFIER, expecting ';' or ','
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(29): 'err' already declared in this scope (avg_four).
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(35): near ".": syntax error, unexpected '.', expecting ')'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(29): 'err' already declared in this scope (avg_four).
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(35): near ".": syntax error, unexpected '.', expecting ')'
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(34): near ".": syntax error, unexpected '.', expecting ')'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(34): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# 
+# Top level modules:
+# 	avg_four
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module counter
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/counter.sv(18): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/counter.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(50): (vlog-2110) Illegal reference to net "modwait".
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(60): (vlog-2110) Illegal reference to net "modwait".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# 
+# Top level modules:
+# 	controller
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(64): near ".": syntax error, unexpected '.', expecting ')'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module avg_four
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/avg_four.sv(65): (vlog-LRM-2367) Multiple connections to the same port: overflow.
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# ** Error: /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv(40): (vlog-2730) Undefined variable: 'tempreg'.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg137/ece337/Lab4/source/controller.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller

@@ -1,0 +1,147 @@
+// $Id: $
+// File name:   tb_decide.sv
+// Created:     4/30/2014
+// Author:      Emre Ozsahin
+// Lab Section: 5
+// Version:     1.0  Initial Design Entry
+// Description: Test Bench for the decide block
+
+`timescale 1ns / 10ps
+
+module tb_decide();
+  
+  parameter CLK_PERIOD			= 5;  
+  localparam	CHECK_DELAY = 20; // Check 1ns after the rising edge to allow for propagation delay
+  
+  //inputs
+  reg clk;
+  reg n_rst;
+  reg [6:0] weatherScore; 
+  reg signed [7:0] dTime; //delta time value
+  reg [7:0] outVal; //count value from downCounter
+  reg halfPulse; 
+  //outputs
+  reg delta; //delta value enable
+  reg signed [7:0] deltaVal;
+  reg start; //start value enable
+  reg signed [7:0] startVal;
+  
+  decide DUT(
+    .clk(clk),
+    .n_rst(n_rst),
+    .weatherScore(weatherScore),
+    .dTime(dTime),
+    .outVal(outVal),
+    .halfPulse(halfPulse),
+    .delta(delta),
+    .deltaVal(deltaVal),
+    .start(start),
+    .startVal(startVal)
+  );
+  
+   always
+	begin
+		clk = 1'b0;
+		#(CLK_PERIOD/2.0);
+		clk = 1'b1;
+		#(CLK_PERIOD/2.0);
+	end
+	
+  initial begin
+    clk = 1;
+    n_rst = 0;
+    weatherScore = 0;
+    dTime = 45;
+    outVal = 20;
+    halfPulse = 0;
+    #20
+    n_rst = 1;
+    
+    #20
+    outVal = 0;
+    #10
+    outVal = 40;
+    #60
+    outVal = 20;
+    halfPulse = 1;
+    #10
+    halfPulse = 0;
+    
+    #30
+    weatherScore = 75;
+    outVal = 0;
+    
+    #40
+    
+    dTime = -69;
+    halfPulse = 1;
+    #7
+    halfPulse = 0;
+    
+    
+    #100
+    $stop;
+  end
+  
+endmodule
+	/*
+	// Default Configuration Test bench main process
+	initial begin
+	 tb_n_rst = 1'b1;
+	  
+	 // Test Case 1 : testing for weather score
+	 tb_weatherScore = 80;
+	 tb_dTime = 50;
+	 tb_outVal = 2;
+	 tb_halfPulse = 0; 
+    #(CHECK_DELAY);
+    
+    //Test Case 2: testing for outval = 0
+    @(negedge tb_clk);
+    tb_weatherScore = 60;
+    tb_dTime = 20;
+    tb_outVal = 0;
+    tb_halfPulse = 0;
+	   #(CHECK_DELAY);
+	   
+	   //Test Case 3: testing for outval = 0
+    @(negedge tb_clk);
+    tb_weatherScore = 50;
+    tb_dTime = 120;
+    tb_outVal = 0;
+    tb_halfPulse = 0;
+	   #(CHECK_DELAY); 
+	   
+	   //Test Case 4: testing for halfPulse = 1
+    @(negedge tb_clk);
+    tb_weatherScore = 70;
+    tb_dTime = 60;
+    tb_outVal = 10;
+    tb_halfPulse = 1;
+	   #(CHECK_DELAY);
+	   
+	   //Test Case 5: testing for halfPulse = 1
+    @(negedge tb_clk);
+    tb_weatherScore = 90;
+    tb_dTime = 40;
+    tb_outVal = 20;
+    tb_halfPulse = 1;
+    
+	   #(CHECK_DELAY);
+	   
+	  //Test Case 6: testing start = 0
+    @(negedge tb_clk);
+    tb_weatherScore = 0;
+    tb_dTime = 30;
+    tb_outVal = 50;
+    tb_halfPulse = 0;
+    
+	   #(CHECK_DELAY);
+	
+	$stop;
+	end
+  
+  
+  
+endmodule
+  */

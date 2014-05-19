@@ -1,0 +1,296 @@
+// $Id: $
+// File name:   tb_neuromorpher_chip.sv
+// Created:     5/1/2014
+// Author:      Kyle Fesmire
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: test bench
+`timescale 1ns/10ps
+
+module tb_neuromorpher_chip();
+  
+  parameter CLK_PERIOD			= 10;  
+  localparam	CHECK_DELAY = 20; // Check 1ns after the rising edge to allow for propagation delay
+  
+  reg clk;
+  reg n_rst;
+  reg car_n;//traffic north enable
+  reg car_s;//traffic south enable
+  reg car_e;//traffic east enable
+  reg car_w;//traffic west enable
+  reg ped_n; //ped north enable
+  reg ped_s; //ped south enable
+  reg ped_e; //ped east enable
+  reg ped_w; //ped west enable
+  reg [3:0] weather; //weather input
+  reg emergency; //emergency for the system
+  
+  
+  //outputs
+  reg [1:0] tr_out_n;
+  reg [1:0] tr_out_s;
+  reg [1:0] tr_out_e;
+  reg [1:0] tr_out_w;
+  reg [1:0] ped_out_n;
+  reg [1:0] ped_out_s;
+  reg [1:0] ped_out_e;
+  reg [1:0] ped_out_w;
+  
+  
+  //SRAM STUFF
+  reg [15:0] s_trafficIn; // input format: 00 - 7bits of NS - 7 bits of EW 
+  reg [15:0] s_pedIn; //input format: 00 - 7 bits of Ns - 7 bits of EW
+  reg [15:0] s_NSout;  //input format 00 - 14 bits of NSout
+  reg [15:0] s_EWout; //input format 00 - 14 bits of NSout
+  reg [15:0] s_dir_time; //input format 00000000 s_dir_time[8] = dir, s_dir_time[7:0] = dTime
+    
+  reg read_enable;
+  reg write_enable;
+  reg [11:0] s_addr;
+  
+  reg [15:0] w_trafficIn;
+  reg [15:0] w_pedIn; 
+  reg [15:0] w_NSout;  
+  reg [15:0] w_EWout;
+  reg [15:0] w_dir_time;
+  
+  
+  reg tb_mem_init;
+  reg tb_mem_clr;
+  reg tb_mem_dump;
+  reg zero;
+  integer tb_init_0;
+  integer tb_init_1;
+  integer tb_init_2;
+  integer tb_init_3;
+  integer tb_init_4;
+  
+  neuromorpher_chip SHREYAS_THE_AI_GUY_2014(
+    clk,
+    n_rst,
+    car_n, 
+    car_s, 
+    car_e,
+    car_w, 
+    ped_n,
+    ped_s, 
+    ped_e, 
+    ped_w, 
+    weather, 
+    emergency, 
+    tr_out_n, 
+    tr_out_s, 
+    tr_out_e, 
+    tr_out_w, 
+    ped_out_n,
+    ped_out_s, 
+    ped_out_e, 
+    ped_out_w
+    
+    s_trafficIn, // input format: 00 - 7bits of NS - 7 bits of EW 
+    s_pedIn, //input format: 00 - 7 bits of Ns - 7 bits of EW
+    s_NSout,  //input format 00 - 14 bits of NSout
+    s_EWout, //input format 00 - 14 bits of NSout
+    s_dir_time, //input format 00000000 s_dir_time[8] = dir, s_dir_time[7:0] = dTime
+    
+    read_enable,
+    write_enable,
+    s_addr, 
+  
+    w_trafficIn,  
+    w_pedIn, 
+    w_NSout,  
+    w_EWout, 
+    w_dir_time
+    );
+    
+      
+  always
+	begin
+		clk = 1'b0;
+		#(CLK_PERIOD/2.0);
+		clk = 1'b1;
+		#(CLK_PERIOD/2.0);
+	end
+    
+    initial begin
+      clk = 1;
+      n_rst = 0;
+      zero <= 0;
+      
+      tb_mem_clr = 0;
+      tb_mem_dump = 0;
+      tb_mem_init = 0;
+      tb_init_0 <= 0;
+      tb_init_1 <= 1;
+      tb_init_2 <= 2;
+      tb_init_3 <= 3;
+      tb_init_4 <= 4;
+      
+      #1
+      tb_mem_init = 0;
+      #5 
+      tb_mem_init = 1;
+      #10
+      tb_mem_init = 0;
+      
+      
+      @(negedge clk);
+      n_rst = 1;
+      car_n = 1;
+      car_s = 1;
+      car_w = 0;
+      car_e = 0;
+      ped_n = 1;
+      ped_s = 1;
+      ped_e = 0;
+      ped_w = 0;
+      weather = 4'b1001;
+      emergency = 0;
+     
+      #20;
+      
+      @(negedge clk);
+      car_n = 0;
+      car_s = 0;
+      car_w = 1;
+      car_e = 1;
+      ped_n = 0;
+      ped_s = 0;
+      ped_e = 1;
+      ped_w = 1;
+      emergency = 0;
+      
+      #30
+      
+      @(negedge clk);
+      car_n = 0;
+      car_s = 1;
+      car_w = 1;
+      car_e = 0;
+      ped_n = 0;
+      ped_s = 1;
+      ped_e = 1;
+      ped_w = 1;
+      emergency = 0;
+      
+      #30
+      
+      @(negedge clk);
+      car_n = 1;
+      car_s = 1;
+      car_w = 1;
+      car_e = 1;
+      ped_n = 1;
+      ped_s = 1;
+      ped_e = 0;
+      ped_w = 0;
+      emergency = 1;
+      
+      #30
+      
+  
+    
+      $stop;
+    end
+    
+    
+    on_chip_sram_wrapper trafficIn__
+	(
+		// Test bench control signals
+		.mem_clr(tb_mem_clr),
+		.mem_init(tb_mem_init),
+		.mem_dump(tb_mem_dump),
+		.verbose(zero),
+		.init_file_number(tb_init_0),
+		.dump_file_number(tb_init_0),
+		.start_address(zero),
+		.last_address(1023),
+		// Memory interface signals
+		.read_enable(read_enable),
+		.write_enable(write_enable),
+		.address(s_addr),
+		.read_data(s_trafficIn),
+		.write_data(w_trafficIn)
+	);
+	
+	
+	on_chip_sram_wrapper pedIn__
+	(
+		// Test bench control signals
+		.mem_clr(tb_mem_clr),
+		.mem_init(tb_mem_init),
+		.mem_dump(tb_mem_dump),
+		.verbose(zero),
+		.init_file_number(tb_init_1),
+		.dump_file_number(tb_init_1),
+		.start_address(zero),
+		.last_address(1023),
+		// Memory interface signals
+		.read_enable(read_enable),
+		.write_enable(write_enable),
+		.address(s_addr),
+		.read_data(s_pedIn),
+		.write_data(w_pedIn)
+	);
+	
+	on_chip_sram_wrapper NSout__
+	(
+		// Test bench control signals
+		.mem_clr(tb_mem_clr),
+		.mem_init(tb_mem_init),
+		.mem_dump(tb_mem_dump),
+		.verbose(zero),
+		.init_file_number(tb_init_2),
+		.dump_file_number(tb_init_2),
+		.start_address(zero),
+		.last_address(1023),
+		// Memory interface signals
+		.read_enable(read_enable),
+		.write_enable(write_enable),
+		.address(s_addr),
+		.read_data(s_NSout),
+		.write_data(w_NSout)
+	);
+	
+	on_chip_sram_wrapper EWout__
+	(
+		// Test bench control signals
+		.mem_clr(tb_mem_clr),
+		.mem_init(tb_mem_init),
+		.mem_dump(tb_mem_dump),
+		.verbose(zero),
+		.init_file_number(tb_init_3),
+		.dump_file_number(tb_init_3),
+		.start_address(zero),
+		.last_address(1023),
+		// Memory interface signals
+		.read_enable(read_enable),
+		.write_enable(write_enable),
+		.address(s_addr),
+		.read_data(s_EWout),
+		.write_data(w_EWout)
+	);
+	
+	on_chip_sram_wrapper dir_time__
+	(
+		// Test bench control signals
+		.mem_clr(tb_mem_clr),
+		.mem_init(tb_mem_init),
+		.mem_dump(tb_mem_dump),
+		.verbose(zero),
+		.init_file_number(tb_init_4),
+		.dump_file_number(tb_init_4),
+		.start_address(zero),
+		.last_address(1023),
+		// Memory interface signals
+		.read_enable(read_enable),
+		.write_enable(write_enable),
+		.address(s_addr),
+		.read_data(s_dir_time),
+		.write_data(w_dir_time)
+	);
+    
+   
+    
+  endmodule

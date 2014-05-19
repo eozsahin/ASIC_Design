@@ -1,0 +1,176 @@
+// $Id: $
+// File name:   outputLogic.sv
+// Created:     4/13/2014
+// Author:      Kyle Fesmire
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: state machine to control output
+
+module outputLogic(
+  input wire clk,
+  input wire n_rst,
+  input wire emergency, 
+  input wire dir, //PLEASE FIX
+  input wire[7:0] countVal,
+  output reg[1:0] trafficN, // 00 RED
+  output reg[1:0] trafficS, // 01 YELLOW
+  output reg[1:0] trafficE, // 10 GREEN
+  output reg[1:0] trafficW,
+  output reg[1:0] pedN, 
+  output reg[1:0] pedS,
+  output reg[1:0] pedE,
+  output reg[1:0] pedW,
+  output reg clear
+  );
+  
+  reg [3:0] state, nextstate;
+  parameter [2:0] S0 = 3'b000, //emergency
+                  S1 = 3'b001, //green N/S
+                  S2 = 3'b010, //ped yellow N/S
+                  S3 = 3'b011, //yellow N/S
+                  S4 = 3'b100, //green E/W
+                  S5 = 3'b101, //ped yellow E/W
+                  S6 = 3'b110; //yellow E/W
+                               
+  always @ (posedge clk, negedge n_rst) begin
+    if(n_rst == 0) begin
+      state <= S0;
+    end else begin
+      state <= nextstate;
+    end
+  end
+  
+  always_comb begin
+    trafficN = 2'b0;
+    trafficS = 2'b0;
+    trafficE = 2'b0;
+    trafficW = 2'b0;
+    pedN = 2'b0;
+    pedS = 2'b0;
+    pedE = 2'b0;
+    pedW = 2'b0;
+    clear = 0;
+    case(state)
+      S0: begin //emergency
+        trafficN = 2'b00;
+        trafficS = 2'b00;
+        trafficE = 2'b00;
+        trafficW = 2'b00;
+        pedN = 2'b00;
+        pedS = 2'b00;
+        pedE = 2'b00;
+        pedW = 2'b00;
+        clear = 1;
+        if(emergency == 1) 
+          nextstate = S0;
+        else if(dir == 1)
+          nextstate = S1;
+        else if(dir == 0)
+          nextstate = S4;
+      end
+      S1: begin //green N/S
+        trafficN = 2'b10;
+        trafficS = 2'b10;
+        trafficE = 2'b00;
+        trafficW = 2'b00;
+        pedN = 2'b10;
+        pedS = 2'b10;
+        pedE = 2'b00;
+        pedW = 2'b00;
+        clear = 0;
+        if(emergency == 1) 
+          nextstate = S0;
+        else if(countVal <= 8'd20)
+          nextstate = S2;
+        else
+          nextstate = S1;
+      end
+      S2: begin //ped yellow N/S
+        trafficN = 2'b10;
+        trafficS = 2'b10;
+        trafficE = 2'b00;
+        trafficW = 2'b00;
+        pedN = 2'b01;
+        pedS = 2'b01;
+        pedE = 2'b00;
+        pedW = 2'b00;
+        clear = 0;
+        if(emergency == 1)
+          nextstate = S0;
+        else if(countVal <= 8'd5)
+          nextstate = S3;
+        else
+          nextstate = S2;
+      end
+      S3: begin //yellow N/S
+        trafficN = 2'b01;
+        trafficS = 2'b01;
+        trafficE = 2'b00;
+        trafficW = 2'b00;
+        pedN = 2'b01;
+        pedS = 2'b01;
+        pedE = 2'b00;
+        pedW = 2'b00;
+        clear = 1;
+        if(emergency == 1) 
+          nextstate = S0;
+        else if (countVal <= 8'd0)
+          nextstate = S4;
+        else
+          nextstate = S3;
+      end
+      S4: begin //green E/W
+        trafficN = 2'b00;
+        trafficS = 2'b00;
+        trafficE = 2'b10;
+        trafficW = 2'b10;
+        pedN = 2'b00;
+        pedS = 2'b00;
+        pedE = 2'b10;
+        pedW = 2'b10;
+        clear = 0;
+        if(emergency == 1)
+          nextstate = S0;
+        else if(countVal <= 8'd20)
+          nextstate = S5;
+        else
+          nextstate = S4;
+      end
+      S5: begin //ped yellow E/W
+        trafficN = 2'b00;
+        trafficS = 2'b00;
+        trafficE = 2'b10;
+        trafficW = 2'b10;
+        pedN = 2'b00;
+        pedS = 2'b00;
+        pedE = 2'b01;
+        pedW = 2'b01;
+        clear = 0;
+        if(emergency == 1)
+          nextstate = S0;
+        else if(countVal <= 8'd5)
+          nextstate = S6;
+        else 
+          nextstate = S5;
+      end
+      S6: begin //yellow E/W
+        trafficN = 2'b00;
+        trafficS = 2'b00;
+        trafficE = 2'b01;
+        trafficW = 2'b01;
+        pedN = 2'b00;
+        pedS = 2'b00;
+        pedE = 2'b01;
+        pedW = 2'b01;
+        if(emergency == 1) 
+          nextstate = S0;
+        else if(countVal <= 8'd0)
+          nextstate = S1;
+        else
+          nextstate = S6;
+      end
+      default: nextstate = S0;
+    endcase
+  end
+  
+endmodule

@@ -1,0 +1,16 @@
+Teamwork Report
+
+1)
+1-Myself: 5 Teammate:5
+2-Myself: 5 Teammate:5
+3-Myself: 4 Teammate:4
+4-Myself: 5 Teammate:5
+
+2) We used the office hours to understand to problem this time rather than debugging purposes. My teammate gave ideas on how to do the timer as a state machine and I contributed other state machine parts on how to form to logic. Towards the end we tested both our design and fixed the mistakes. Finally, it worked out well and program worked.
+
+3)This week, we met 5 times during and after the office hours. We used text messaging pretty often. 
+
+4) I contribute the team by understanding how the machine works so I worked on testing to see what both our program was doing unexpected stuff. Also came up with a logic to control unit and tested too.
+
+5)My teammate debugged the programs too. We switched parts where we get efficiency on how to write the codes in a better and quicker way. My teammate also helped on timer to come up with the state machine idea and elaborated on how to waste cycle at the beginning.
+

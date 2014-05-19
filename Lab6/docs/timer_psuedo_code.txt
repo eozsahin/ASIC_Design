@@ -1,0 +1,38 @@
+if n_rst == 0
+	state = state;
+else 
+	state = nextstate;
+done
+
+comb	
+
+IDLE: set zeros
+	check if start found
+		go to CNT
+	else 
+		go to idle
+CNT: count 8 rising edges
+	
+	if falling_edge_found
+		go to NEXT_F_EDGE
+N_FALL_EDGE :
+	ack_prep = 1
+	byte_recieved = 1
+	//go to NEXT_R_EDGE
+	If rising_edge_found
+		go to NEXT_R_EDGE
+N_RISE_EDGE: 
+	check_prep = 1
+	//go to FINAL_F_EDGE
+	if falling_edge_found
+		go to FINAL_F_EDGE
+		
+FIN_FALL_EDGE:
+	ack_done = 1
+	go to GETDATA	
+	
+if(stop_found)
+	go to IDLE
+
+flex_counter
+	count for 8 bits

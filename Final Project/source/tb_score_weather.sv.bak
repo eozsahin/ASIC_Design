@@ -1,0 +1,126 @@
+`timescale 1ns / 10ps
+
+module tb_score_weather();
+  
+  parameter CLK_PERIOD			= 10;  
+  localparam	CHECK_DELAY = 20; // Check 1ns after the rising edge to allow for propagation delay
+  
+  //input
+  reg tb_clk;
+  reg tb_n_rst;
+  reg tb_test_num;
+  //output
+  reg [3:0] tb_w_in;
+  reg [6:0] tb_w_out;
+  
+  // w_in:
+  //-----------------
+  // 1st - visibility
+  // 2nd - rain/snow
+  // 3rd and 4th - severity
+  
+  score_weather DUT
+  (
+    .w_in(tb_w_in),
+    .w_out(tb_w_out)
+  );
+  
+   always
+	begin
+		tb_clk = 1'b0;
+		#(CLK_PERIOD/2.0);
+		tb_clk = 1'b1;
+		#(CLK_PERIOD/2.0);
+	end
+	
+	// Default Configuration Test bench main process
+	initial
+	begin
+	  tb_test_num = 0;
+	  tb_w_in = 4'b0000;
+	  
+	  // Power-on Reset of the DUT
+	  #(0.1);
+		#(CLK_PERIOD * 2.25);	// Release the reset away from a clock edge
+	  #(CLK_PERIOD);
+	  tb_n_rst = 1'b0;  
+	  
+	  // TEST CASE 1
+	  @(negedge tb_clk);
+    tb_test_num = tb_test_num + 1; 
+    tb_w_in = 4'b1101;
+    // low vis, rain, sev = 2
+    
+     @(posedge tb_clk);
+    #(CHECK_DELAY);
+    
+    //check the direction
+    if(tb_w_out == 80 ) //50,30
+      $info("Default Test Case %0d: PASSED", tb_test_num);
+	  else // Test case failed
+		  $error("Default Test Case %0d: FAILED", tb_test_num);
+		
+    
+	  // TEST CASE 2
+	  @(negedge tb_clk);
+    tb_test_num = tb_test_num + 1; 
+    tb_w_in = 4'b0110;
+    // good vis, rain, sev = 3
+    
+     @(posedge tb_clk);
+    #(CHECK_DELAY);
+    
+    //check the direction
+    if(tb_w_out == 40) //0,40
+      $info("Default Test Case %0d: PASSED", tb_test_num);
+	  else // Test case failed
+		  $error("Default Test Case %0d: FAILED", tb_test_num);
+	  
+	  
+	  // TEST CASE 3
+	  @(negedge tb_clk);
+    tb_test_num = tb_test_num + 1; 
+    tb_w_in = 4'b0011;
+    // good vis, rain, sev = 3
+    
+     @(posedge tb_clk);
+    #(CHECK_DELAY);
+    
+    //check the direction
+    if(tb_w_out == 0) //0,0
+      $info("Default Test Case %0d: PASSED", tb_test_num);
+	  else // Test case failed
+		  $error("Default Test Case %0d: FAILED", tb_test_num);
+		  
+		  // TEST CASE 4
+	  @(negedge tb_clk);
+    tb_test_num = tb_test_num + 1; 
+    tb_w_in = 4'b1011;
+    // good vis, rain, sev = 3
+    
+     @(posedge tb_clk);
+    #(CHECK_DELAY);
+    
+    //check the direction
+    if(tb_w_out == 50) //50,0
+      $info("Default Test Case %0d: PASSED", tb_test_num);
+	  else // Test case failed
+		  $error("Default Test Case %0d: FAILED", tb_test_num);
+		  
+		  // TEST CASE 5
+	  @(negedge tb_clk);
+    tb_test_num = tb_test_num + 1; 
+    tb_w_in = 4'b1111;
+    // good vis, rain, sev = 3
+    
+     @(posedge tb_clk);
+    #(CHECK_DELAY);
+    
+    //check the direction
+    if(tb_w_out == 100) //50,50
+      $info("Default Test Case %0d: PASSED", tb_test_num);
+	  else // Test case failed
+		  $error("Default Test Case %0d: FAILED", tb_test_num);
+	  
+	  end
+endmodule
